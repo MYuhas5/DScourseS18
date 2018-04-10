@@ -15,9 +15,9 @@ library(mlr)
 housing <- read.table("http://archive.ics.uci.edu/ml/machine-learning-databases/housing/housing.data")
 names(housing) <- c("crim","zn","indus","chas","nox","rm","age","dis","rad","tax","ptratio","b","lstat","medv")
 
-housing$lmedv <- log( housing $ medv )
+housing$lmedv <- log(housing$medv)
 housing$medv <- NULL # drop median value
-formula <- as.formula(lmedv ~ .^3 +
+formula <- as.formula(lmedv~.^3 +
                            poly (crim, 6) +
                            poly (zn, 6) +
                            poly (indus, 6) +
@@ -30,11 +30,11 @@ formula <- as.formula(lmedv ~ .^3 +
                            poly (ptratio , 6) +
                            poly (b, 6) +
                            poly (lstat, 6))
-mod_matrix <- data.frame(model.matrix(formula, housing))
+mod_matrix <- data.frame(model.matrix(formula,housing))
 #now replace the intercept column by the response since MLR will do
 #"y ~ ." and get the intercept by default
 mod_matrix[, 1] = housing$lmedv
-colnames(mod_matrix)[1] = " lmedv " # make sure to rename it otherwise MLR won't find it
+colnames(mod_matrix)[1] = "lmedv" # make sure to rename it otherwise MLR won't find it
 head(mod_matrix) # just make sure everything is hunky - dory
 # Break up the data :
 n <- nrow(mod_matrix)
