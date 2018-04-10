@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{PS10 Yuhas}
+\author{myuhas5120 }
+\date{April 2018}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Optimal Tuning parameters}
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}| }
+ \hline
+ Algorithm & F1 Score & G-measure \\
+ \hline
+ Tree   & 0.9003582    & 0.7481412\\
+ Logic &  0.8630532 & 0.000000 \\
+ Neural & 0.9059695 & 0.7541673\\
+ KKNN    & 0.8975309 & 0.7467755\\
+ SVM &   0.9038760  & 0.7159850\\
+ Bayes& NA  & NA   \\
+ \hline
+\end{tabular}
+
+\section{Out of Sample Performance}
+Tree and logic models have similar performance.  Neural and KKNN have similar G-measures, but neural and SVM have more similar F1 values.  Bayes has the lowest F1 but a 
+
+\end{document}
