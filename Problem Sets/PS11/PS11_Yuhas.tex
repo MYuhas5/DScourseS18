@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{PS11 Yuhas}
+\author{myuhas5120 }
+\date{April 2018}
+
+\usepackage[authoryear]{natbib}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\begin{itemize}
+    \item Type of craft beer predicted by ABV of Beer
+    \item Potentially increase accuracy by sub-setting by brewery.
+\end{itemize}
+
+\section{Literature Review}
+\begin{itemize}
+    \item Craft beer rising share of beverages markets
+    \item Craft beer associated with niche knowledge
+    \item Breweries recently creating stronger beers
+\end{itemize}
+
+\section{Data}
+\begin{itemize}
+    \item obtained from Kaggle 
+at:"https://www.kaggle.com/nickhould/craft-cans/data"
+    \item 64 of 2411 have no ABV(Alcohol By Volume) values and are 
+dropped.
+    \item since some breweries are missing ABV values for all drinks, 
+subsetting by brewery is not currently an option.
+    \item Potential future fix is to manually find ABV values for each 
+of the 64 beers.
+\end{itemize}
+
+\section{Methods}
+\begin{itemize}
+    \item k Nearest Neighbors(kNN): Six fold Cross Validation with 15 
+random guess tuning
+    \item Support Vector Machine(SVM): Six fold Cross Validation with 15 
+random guess tuning
+    \item I expect SVM to provide a better model due to the numerous 
+types of beer and possible ABV values.
+\end{itemize}
+
+\section{Findings}
+\begin{itemize}
+    \item I expect the model to have moderate accuracy at best due to 
+the smaller range of ABV values to beer types.
+\end{itemize}
+
+\section{Conclusion}
+\begin{itemize}
+    \item In conclusion, I believe that ABV may be easier to predict 
+based on type of beer which is a reversal of this project; however, the 
+possibilities provided by this analysis may be valuable in public 
+education of craft brewing.
+\end{itemize}
+
+\bibliographystyle{jpe}
+\nocite{*}
+\bibliography{PS11_Yuhas.bib}
+
+
+\end{document}
+
