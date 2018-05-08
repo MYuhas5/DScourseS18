@@ -1,7 +1,7 @@
 # Author: Michael Yuhas
 # Final project
 
-dird = dird = "C://Users//MJYuh//DScourseS18//FinalProject//Yuhas"
+dird = "C://Users//MJYuh//DScourseS18//FinalProject//Yuhas"
 
 setwd(dird)
 set.seed(150)
@@ -130,10 +130,12 @@ prediction.svm = predict(finalModel.svm,newdata=beer.test)
 
 
 # Test out of sample performance
-performance(prediction.kknn, measures = list(acc))
+perf.kknn = performance(prediction.kknn, measures = list(acc))
 
-performance(prediction.svm, measures  = list(acc))
+perf.svm = performance(prediction.svm, measures  = list(acc))
 
+perf.kknn
+perf.svm
 
 # Creation of modelling figures for writeup
 plot(beer$abv, beer$style)
